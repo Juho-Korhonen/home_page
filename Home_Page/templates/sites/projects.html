@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1{
+            text-align: left;
+            font-size: 20px;
+            padding: 5px;
+        }
+        p{
+            width: 100%;
+            float: left;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 15px;
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>My Projects</title>
+</head>
+<body>
+{% for project in projects %}
+    <h1><a href="{{project.github_link}}" target="_blank" rel="noopener noreferrer">{{project.title}}</a></h1>
+    <p>{{project.explanation}}</p>
+    <hr>
+
+{% endfor %}
+</body>
+</html>
+{% endblock %}
